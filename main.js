@@ -13,15 +13,15 @@ function clickEvent(){
   sendText(text,textName,value);
 }
 
-function sendText(text){
-  chatDataStore.push({message : text},function(data){
+function sendText(text,nm){
+  chatDataStore.push({uname :,content : text},function(data){
     console.log("送信完了!");
     textArea.value = "";
   });
 }
 
 chatDataStore.on("push",function(data){
-  addText(data.value.message);
+  addText(data.value);
 });
 
 function addText(text){
